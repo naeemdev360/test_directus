@@ -1,5 +1,7 @@
 # syntax=docker/dockerfile:1.4
 FROM directus/directus:10.8.3
+# Copy necessary files
+COPY DigitalOcean_CA.crt /app/
 USER root
 RUN corepack enable \
 && corepack prepare pnpm@8.7.6 --activate \
